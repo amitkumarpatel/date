@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150728030707) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "access_tokens", force: true do |t|
     t.integer  "user_id"
     t.text     "access_token"
@@ -92,11 +89,13 @@ ActiveRecord::Schema.define(version: 20150728030707) do
   add_index "letsgos", ["user_id", "created_at"], name: "index_letsgos_on_user_id_and_created_at", using: :btree
 
   create_table "locations", force: true do |t|
-    t.string "zip_code"
-    t.string "city"
-    t.string "state"
-    t.float  "latitude"
-    t.float  "longitude"
+    t.string   "zip_code"
+    t.string   "city"
+    t.string   "state"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "mail_campaign_attachments", force: true do |t|
@@ -308,7 +307,7 @@ ActiveRecord::Schema.define(version: 20150728030707) do
     t.string   "height"
     t.string   "user_smoke"
     t.string   "user_drink"
-    t.string   "about_me",               limit: 485
+    t.string   "about_me"
     t.string   "inches"
     t.string   "feet"
     t.datetime "created_at"
@@ -322,14 +321,14 @@ ActiveRecord::Schema.define(version: 20150728030707) do
     t.integer  "age"
     t.integer  "default_photo_id"
     t.string   "time_zone"
-    t.integer  "avatar_id",                          default: 1
+    t.integer  "avatar_id",              default: 1
     t.integer  "average_response_time"
     t.integer  "response_rate"
     t.integer  "response_total"
     t.integer  "plan_id"
     t.boolean  "no_email"
     t.string   "slug"
-    t.boolean  "delta",                              default: true, null: false
+    t.boolean  "delta",                  default: true, null: false
     t.date     "birthday"
     t.string   "avatar_tmp"
   end

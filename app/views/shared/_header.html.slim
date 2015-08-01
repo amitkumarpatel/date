@@ -43,13 +43,13 @@
             span class="messbg_icon" =unread_messages(current_user)
     
 #menu_sec
-  .wrapper
+  .wrapper.navbar.navbar-default
     .logo
       a href="#{root_path}" 
         =image_tag "logo.png"
     - if logged_in_user.blank?
       a href="/signup" class="registered_btn" Not Yet Registered 
-    ul#nav
+    ul.nav.navbar-nav#nav
       li.active
         a href="#{root_path}" 
           =image_tag "home_icon.png"

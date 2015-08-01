@@ -2,9 +2,10 @@ doctype Strict
 html xmlns="http://www.w3.org/1999/xhtml" 
   head
     meta content=("text/html; charset=utf-8") http-equiv="Content-Type" /
+    meta content="width=device-width, initial-scale=1" name="viewport" /
+    meta content=("cheap dating, online dating, romance, love, sex, blog, matchmaker") name="keywords" /
+    meta content=("AreYouTaken is the one dollar a month dating site that gets you offline so you can meet new people in the real world. Post a date and go out.") name="description" /
     title Are You Taken
-	meta content=("cheap dating, online dating, romance, love, sex, blog, matchmaker") name="keywords" /
-	meta content=("AreYouTaken is the one dollar a month dating site that gets you offline so you can meet new people in the real world. Post a date and go out.") name="description" /
     = tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY
     = csrf_meta_tag
     = stylesheet_link_tag "application", :media => "all"
@@ -28,7 +29,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
 		= flash[:notice]
 	  button type="button" class="close" aria-label="Close"
 	    span aria-hidden="true" &times;
-    #outer
+    #outer.container.container-fluid
       a href="#" class='scroll_link'  Scroll to Top
       == render 'shared/header'
       #body_container
